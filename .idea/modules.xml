@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Giggle.iml" filepath="$PROJECT_DIR$/Giggle.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javasrclib/javasrclib.iml" filepath="$PROJECT_DIR$/javasrclib/javasrclib.iml" />
       <module fileurl="file://$PROJECT_DIR$/jokeshowlib/jokeshowlib.iml" filepath="$PROJECT_DIR$/jokeshowlib/jokeshowlib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jokesrclib/jokesrclib.iml" filepath="$PROJECT_DIR$/jokesrclib/jokesrclib.iml" />
     </modules>
   </component>
 </project>

@@ -1,9 +1,13 @@
-<manifest package="com.standon.sahil.jokeshowlib"
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.standon.sahil.giggle.jokeshowlib"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application android:allowBackup="false"
-                 android:label="@string/app_name"
-                 android:supportsRtl="true">
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name=".JokeViewer">
+        </activity>
     </application>
 
 </manifest>
