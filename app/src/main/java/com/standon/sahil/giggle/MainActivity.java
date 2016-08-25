@@ -23,7 +23,6 @@ public class MainActivity extends Activity {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
-
     }
 
     public void tellJoke(View view){
