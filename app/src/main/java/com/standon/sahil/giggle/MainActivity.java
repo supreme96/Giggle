@@ -27,8 +27,7 @@ public class MainActivity extends Activity {
 
     public void tellJoke(View view){
         //Toast.makeText(this, new JavaSrc().retrieveJoke(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, JokeViewer.class);
-        intent.putExtra("joke", new JavaSrc().retrieveJoke());
-        startActivity(intent);
+        JokeFetchTask task = new JokeFetchTask();
+        task.execute(this);
     }
 }
