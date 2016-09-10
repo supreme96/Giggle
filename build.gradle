@@ -33,3 +33,9 @@ project(":backend"){
 }
 
 
+tasks.getByPath(':app:connectedCheck').mustRunAfter (':backend:appengineRun')
+tasks.getByPath(':app:connectedCheck').finalizedBy(':backend:appengineStop')
+task testAsync {
+    dependsOn ":backend:appengineRun", ":app:connectedCheck", ":backend:appengineStop"
+}
+

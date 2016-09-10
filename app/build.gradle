@@ -37,10 +37,3 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(path: ':backend', configuration: 'android-endpoints')
 }
-
-tasks.getByPath(':app:connectedCheck').mustRunAfter (':backend:appengineRun')
-tasks.getByPath(':backend:appengineStop').mustRunAfter (':app:connectedCheck')
-
-task testAsync {
-    dependsOn ":backend:appengineRun", ":app:connectedCheck", ":backend:appengineStop"
-}
