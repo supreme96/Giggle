@@ -9,9 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.standon.sahil.giggle.MainActivity">
+    android:layout_height="match_parent">
 
+<!--
 
 
     <TextView
@@ -39,5 +39,6 @@
         ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
 
 
+-->
 
 </RelativeLayout>

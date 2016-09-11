@@ -65,7 +65,3 @@ public class JokeFetchTask extends AsyncTask<JokeReceiver, Void, String> {
     }
 
 }
-
-interface JokeReceiver{
-    public void jokeFetched(String joke);
-}

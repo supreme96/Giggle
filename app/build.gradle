@@ -20,6 +20,22 @@ android {
     lintOptions {
         abortOnError false
     }
+    productFlavors {
+        free {
+            applicationId "com.standon.sahil.giggle.free"
+        }
+        paid {
+            applicationId "com.standon.sahil.giggle.paid"
+        }
+    }
+    sourceSets {
+        paid {
+            manifest.srcFile 'app/src/paid/AndroidManifest.xml'
+        }
+        free {
+            manifest.srcFile 'app/src/free/AndroidManifest.xml'
+        }
+    }
 }
 
 dependencies {
@@ -30,10 +46,12 @@ dependencies {
     // Added for AdMob
     compile project(':javasrclib')
     compile project(':jokeshowlib')
+    compile project(path: ':backend', configuration: 'android-endpoints')
     compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.google.android.gms:play-services-ads:9.4.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     testCompile 'junit:junit:4.12'
-    compile project(path: ':backend', configuration: 'android-endpoints')
 }
+
+
