@@ -16,7 +16,7 @@ public class JokeViewer extends Activity {
         jokeViewTextView = (TextView) findViewById(R.id.joke_view_tv);
         joke = getIntent().getStringExtra("joke");
         if (joke == null){
-            jokeViewTextView.setText("No joke retrieved :( \n Local Server Offline");
+            jokeViewTextView.setText(getString(R.string.no_joke_retrieved));
         }else{
             jokeViewTextView.setText(joke);
         }
