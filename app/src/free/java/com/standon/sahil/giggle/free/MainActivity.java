@@ -35,13 +35,13 @@ public class MainActivity extends Activity implements JokeReceiver{
         //Toast.makeText(this, new JavaSrc().retrieveJoke(), Toast.LENGTH_SHORT).show();
         JokeFetchTask task = new JokeFetchTask();
         task.execute(this);
-        Intent intent = new Intent(this, JokeViewer.class);
-        intent.putExtra("joke", joke);
-        startActivity(intent);
     }
 
     @Override
     public void jokeFetched(String joke) {
         this.joke = joke;
+        Intent intent = new Intent(this, JokeViewer.class);
+        intent.putExtra("joke", joke);
+        startActivity(intent);
     }
 }
