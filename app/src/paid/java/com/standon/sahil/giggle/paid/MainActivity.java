@@ -19,11 +19,9 @@ public class MainActivity extends Activity implements JokeReceiver {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "THIS IS THE PAID", Toast.LENGTH_SHORT).show();
     }
 
     public void tellJoke(View view){
-        //Toast.makeText(this, new JavaSrc().retrieveJoke(), Toast.LENGTH_SHORT).show();
         JokeFetchTask task = new JokeFetchTask();
         task.execute(this);
     }

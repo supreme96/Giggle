@@ -21,17 +21,13 @@ public class MainActivity extends Activity implements JokeReceiver{
 
     private String joke;
     private InterstitialAd interstitialAd;
-    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(getApplicationContext(), "THIS IS THE FREE", Toast.LENGTH_SHORT).show();
         AdView mAdView = (AdView) findViewById(R.id.adView);
-        /*spinner = new Spinner(this);
-        spinner.setVisibility(View.GONE);
-        */// Create an ad request. Check logcat output for the hashed device ID to
+        // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
         // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
         AdRequest adRequest = new AdRequest.Builder()
@@ -50,7 +46,6 @@ public class MainActivity extends Activity implements JokeReceiver{
     }
 
     public void tellJoke(View view){
-        /*spinner.setVisibility(View.VISIBLE);*/
         requestNewInterstitial();
         JokeFetchTask task = new JokeFetchTask();
         task.execute(this);

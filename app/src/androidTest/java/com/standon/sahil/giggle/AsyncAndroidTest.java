@@ -37,7 +37,9 @@ public class AsyncAndroidTest extends AndroidTestCase implements JokeReceiver{
         timingSignal = new CountDownLatch(1);
         task.execute(this);
         timingSignal.await();
-        assertEquals("Here's a Joke. Laugh your brains out ;)", joke);
+        assertNotNull("Joke is null", joke);
+        assertFalse("Joke has zero length", joke.length() == 0);
+        assertEquals("Correct Joke not recieved","Here's a Joke. Laugh your brains out ;)", joke);
     }
 
     @Override
