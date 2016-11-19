@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.standon.sahil.giggle"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    productFlavors {
+        free {
+            applicationId "com.standon.sahil.giggle.free"
+        }
+        paid {
+            applicationId "com.standon.sahil.giggle.paid"
+        }
+    }
+    sourceSets {
+        paid {
+            manifest.srcFile 'src/paid/AndroidManifest.xml'
+        }
+        free {
+            manifest.srcFile 'src/free/AndroidManifest.xml'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // Added for AdMob
+    compile project(':javasrclib')
+    compile project(':jokeshowlib')
+    compile project(path: ':backend', configuration: 'android-endpoints')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    freeCompile 'com.google.android.gms:play-services-ads:9.4.0'
+    /*compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'*/
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+    testCompile 'junit:junit:4.12'
+}
+
+
